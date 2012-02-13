@@ -1,0 +1,2 @@
+# keytool -genkey -keystore PDEApplet.keystore -alias PDEApplet
+jarsigner -keystore PDEApplet.keystore PDEApplet.jar PDEApplet

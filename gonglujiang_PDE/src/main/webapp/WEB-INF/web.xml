@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+    <!--context-param>
+        <param-name>com.quova.platform.CRMPropertyFile</param-name>
+        <param-value>${catalina.home}/conf/quova/salesforce.properties</param-value>
+    </context-param-->
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springmvc-servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- AUTHENTICATION -->
+    <!--
+    <context-param>
+        <param-name>resteasy.role.based.security</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
+    </listener>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>springmvc</web-resource-name>
+            <url-pattern>/tokens/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>qspclient</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>PlatformServices</realm-name>
+    </login-config>
+
+    <!- -security-role>
+        <role-name>admin</role-name>
+    </security-role- ->
+    <security-role>
+        <role-name>qspclient</role-name>
+    </security-role>
+     -->
+
+</web-app>
